@@ -1,0 +1,11 @@
+.globalHeader {
+  height: 80px;
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-top: 0;
+}
