@@ -9,7 +9,8 @@
   --yellow: #ffed00;
   --brown: #3f1e10;
   --red: #e62c1c;
-
+  --titleFont: "Montserrat", sans-serif;
+  --mainFont: "Roboto", sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -29,12 +30,22 @@ body {
   margin: 0;
   width: 100vw;
   min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    rgba(230, 44, 28, 0.1),
+    rgba(63, 30, 16, 0.15)
+  );
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: var(--mainFont);
   color: var(--brown);
+}
+
+h1 {
+  font-family: var(--titleFont);
 }
 
 button {

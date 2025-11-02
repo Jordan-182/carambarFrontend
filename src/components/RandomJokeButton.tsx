@@ -10,15 +10,20 @@ interface Joke {
 
 interface RandomJokeButtonProps {
   setJoke: Dispatch<SetStateAction<Joke | null>>;
+  setIsAnswerVisible: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function RandomJokeButton({ setJoke }: RandomJokeButtonProps) {
+export default function RandomJokeButton({
+  setJoke,
+  setIsAnswerVisible,
+}: RandomJokeButtonProps) {
   const [isPending, setIsPending] = useState<boolean>(false);
   const handleClick = async () => {
     try {
       setIsPending(true);
       const response = await getRandomJoke();
       setJoke(response.data);
+      setIsAnswerVisible(false);
       setIsPending(false);
     } catch (error) {
       console.error(error);
